@@ -12,6 +12,8 @@
 		D1CA66DF1CAA250D009A083B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1CA66DD1CAA250D009A083B /* Main.storyboard */; };
 		D1CA66E11CAA250D009A083B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D1CA66E01CAA250D009A083B /* Assets.xcassets */; };
 		D1CA66E41CAA250D009A083B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D1CA66E21CAA250D009A083B /* LaunchScreen.storyboard */; };
+		D1CA66EC1CAA520B009A083B /* MyUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CA66EB1CAA520B009A083B /* MyUIImageView.swift */; };
+		D1CA66EE1CAA731A009A083B /* ChannelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D1CA66ED1CAA731A009A083B /* ChannelViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		D1CA66E01CAA250D009A083B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D1CA66E31CAA250D009A083B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D1CA66E51CAA250D009A083B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D1CA66EB1CAA520B009A083B /* MyUIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUIImageView.swift; sourceTree = "<group>"; };
+		D1CA66ED1CAA731A009A083B /* ChannelViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +64,8 @@
 				D1CA66E01CAA250D009A083B /* Assets.xcassets */,
 				D1CA66E21CAA250D009A083B /* LaunchScreen.storyboard */,
 				D1CA66E51CAA250D009A083B /* Info.plist */,
+				D1CA66EB1CAA520B009A083B /* MyUIImageView.swift */,
+				D1CA66ED1CAA731A009A083B /* ChannelViewController.swift */,
 			);
 			path = DBFM;
 			sourceTree = "<group>";
@@ -137,6 +143,8 @@
 			files = (
 				D1CA66DC1CAA250D009A083B /* ViewController.swift in Sources */,
 				D1CA66DA1CAA250D009A083B /* AppDelegate.swift in Sources */,
+				D1CA66EE1CAA731A009A083B /* ChannelViewController.swift in Sources */,
+				D1CA66EC1CAA520B009A083B /* MyUIImageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
