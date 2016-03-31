@@ -3,7 +3,7 @@
 # Uncomment this line if you're using Swift
 use_frameworks!
 target 'DBFM' do
-pod 'Alamofire'
+pod 'Alamofire', '~> 3.0'
 pod 'SwiftyJSON'
 end
 

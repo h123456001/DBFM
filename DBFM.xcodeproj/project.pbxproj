@@ -10,20 +10,7 @@
 	<string>46</string>
 	<key>objects</key>
 	<dict>
-		<key>2383172236B0B77A25C6E244</key>
-		<dict>
-			<key>explicitFileType</key>
-			<string>wrapper.framework</string>
-			<key>includeInIndex</key>
-			<string>0</string>
-			<key>isa</key>
-			<string>PBXFileReference</string>
-			<key>path</key>
-			<string>Pods_DBFM.framework</string>
-			<key>sourceTree</key>
-			<string>BUILT_PRODUCTS_DIR</string>
-		</dict>
-		<key>4D3F0670E12578969E26B07D</key>
+		<key>1B7B67914DB4EECF4EF22CD1</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -38,12 +25,39 @@
 			<key>sourceTree</key>
 			<string>&lt;group&gt;</string>
 		</dict>
+		<key>2383172236B0B77A25C6E244</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods_DBFM.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
 		<key>5046693305033B69CE8A7C45</key>
 		<dict>
 			<key>fileRef</key>
 			<string>2383172236B0B77A25C6E244</string>
 			<key>isa</key>
 			<string>PBXBuildFile</string>
+		</dict>
+		<key>536786056074ECA4E2C3C3DB</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>6263836BE229C03CB078AE52</string>
+				<string>1B7B67914DB4EECF4EF22CD1</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
 		</dict>
 		<key>5A9042C54FF9FC99FC6186A1</key>
 		<dict>
@@ -99,7 +113,7 @@ fi
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
 		</dict>
-		<key>8CA60F1BA09317BE3978EC77</key>
+		<key>6263836BE229C03CB078AE52</key>
 		<dict>
 			<key>includeInIndex</key>
 			<string>1</string>
@@ -134,8 +148,8 @@ fi
 				<string>D1CA66F11CAA9152009A083B</string>
 				<string>D1CA66D81CAA250D009A083B</string>
 				<string>D1CA66D71CAA250D009A083B</string>
-				<string>FFA07C4093CEFD43FACA4254</string>
 				<string>B88EBFB64BDEFD1D157DD497</string>
+				<string>536786056074ECA4E2C3C3DB</string>
 			</array>
 			<key>isa</key>
 			<string>PBXGroup</string>
@@ -634,7 +648,7 @@ fi
 		<key>D1CA66E91CAA250D009A083B</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>8CA60F1BA09317BE3978EC77</string>
+			<string>6263836BE229C03CB078AE52</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
@@ -656,7 +670,7 @@ fi
 		<key>D1CA66EA1CAA250D009A083B</key>
 		<dict>
 			<key>baseConfigurationReference</key>
-			<string>4D3F0670E12578969E26B07D</string>
+			<string>1B7B67914DB4EECF4EF22CD1</string>
 			<key>buildSettings</key>
 			<dict>
 				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
@@ -827,20 +841,6 @@ fi
 </string>
 			<key>showEnvVarsInLog</key>
 			<string>0</string>
-		</dict>
-		<key>FFA07C4093CEFD43FACA4254</key>
-		<dict>
-			<key>children</key>
-			<array>
-				<string>8CA60F1BA09317BE3978EC77</string>
-				<string>4D3F0670E12578969E26B07D</string>
-			</array>
-			<key>isa</key>
-			<string>PBXGroup</string>
-			<key>name</key>
-			<string>Pods</string>
-			<key>sourceTree</key>
-			<string>&lt;group&gt;</string>
 		</dict>
 	</dict>
 	<key>rootObject</key>

@@ -8,11 +8,14 @@
 
 import UIKit
 import AVFoundation
-class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+import Alamofire
+class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,HttpProtocol{
 
     @IBOutlet weak var playlist: UITableView!
     @IBOutlet weak var plate: MyUIImageView!
     @IBOutlet weak var bg: UIImageView!
+    //定义网络操作类
+    var eHttp:HTTPController = HTTPController()
     override func viewDidLoad() {
         super.viewDidLoad()
         plate.onRoatation()
@@ -25,6 +28,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         blurview.frame.size = CGSize(width: view.frame.width, height: view.frame.height)
         bg.addSubview(blurview)
         // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        //单独使用alamofire获取数据
+        Alamofire.request(.GET, "https://www.douban.com/j/app/radio/channels").responseJSON { (Response) in
+            print("使用Alamofire获得的数据：\(Response)")
+        }
+        //使用自定义的类内嵌Alamofire获取数据
+        eHttp.delegate = self
+        eHttp.onSearch("https://www.douban.com/j/app/radio/channels")
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,6 +67,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         cell.imageView?.image = UIImage(named: "wangba")
         return cell
     }
+    func didRecieveResult(results: AnyObject){
+        print("使用HttpProtocol获得数据\(results)")
+    }
+
 
 
 }
