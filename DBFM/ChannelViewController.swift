@@ -7,10 +7,18 @@
 //
 
 import UIKit
-
+import SwiftyJSON
+protocol ChannelProtocol {
+    //回调方法 将频道ID传回代理中
+    func onChangeChannel(channel_id:String)
+}
 class ChannelViewController: UIViewController {
-
+    //频道列表的tableview组件
     @IBOutlet weak var ChannelView: UITableView!
+    //申明代理
+    var delegate:ChannelProtocol?
+    //频道列表数据
+    var channelData:[JSON] = []
     override func viewDidLoad() {
         super.viewDidLoad()
     

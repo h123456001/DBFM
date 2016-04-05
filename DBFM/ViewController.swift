@@ -10,12 +10,13 @@ import UIKit
 import AVFoundation
 import Alamofire
 import SwiftyJSON
+//ViewController这个类接受任务遵循任务要求HttpProtocol协议
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource,HttpProtocol{
 
     @IBOutlet weak var playlist: UITableView!
     @IBOutlet weak var plate: MyUIImageView!
     @IBOutlet weak var bg: UIImageView!
-    //定义网络操作类
+    //定义网络操作类eHttp继承HttpController
     var eHttp:HTTPController = HTTPController()
     //用于接收频道数据和歌曲数据
     var tablesonglistData:[JSON] = []
@@ -41,19 +42,44 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
 //            print("使用Alamofire获得的数据：\(Response)")
 //        }
         //使用自定义的类内嵌Alamofire获取数据
+        //ViewController接受委托
         eHttp.delegate = self
+        //使用HTTPController的onSearch方法让didRecieveResult接受对应的JSON结果
         //获取频道数据
         eHttp.onSearch("http://www.douban.com/j/app/radio/channels")
-        //获取频道为-10歌曲数据
-        eHttp.onSearch("http://douban.fm/j/mine/playlist?type=n&sid=&pt=0.0&channel=-10&from=mainsite")
-        
+        //获取频道为-10歌曲数据http://douban.fm/j/mine/playlist?type=n&channel=1&from=mainsite
+        //eHttp.onSearch("http://douban.fm/j/mine/playlist?type=n&sid=&pt=0.0&channel=-10&from=mainsite")
+        eHttp.onSearch("http://douban.fm/j/mine/playlist?type=n&channel=1&from=mainsite")
         
     }
-
+    func didRecieveResult(results: AnyObject){
+        //print("使用HttpProtocol获得数据\(results)")
+        //将获取到的数据进行判断类型
+        let json = JSON(results)
+        
+        //判断是否是频道数据
+        if let channels = json["channels"].array {
+            self.tablechannellistData = channels
+        }//歌曲数据,是歌曲数据对
+        else if let song = json["song"].array{
+            self.tablesonglistData = song
+        }
+        //获取数据后更新tableview里的数据
+        self.playlist.reloadData()
+        
+    }
+    
+    
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
     
     
     //表格列数（区块）
@@ -78,8 +104,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         //设置cell的子标题
         cell.detailTextLabel?.text = rowData["singers.name"].string
         //设置封面网址
-        let url = rowData["picture"].string
-        
+        let url = rowData["picture"].string        
         //设置缩略图,使用Alamofire获取
         Alamofire.request(.GET,url!).responseData { (result) in
             let img = UIImage(data: result.result.value!)
@@ -90,24 +115,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         return cell
     }
-    func didRecieveResult(results: AnyObject){
-        print("使用HttpProtocol获得数据\(results)")
-        //将获取到的数据进行判断类型
-        let json = JSON.init(arrayLiteral: results)
-        
-        //判断是否是频道数据
-        if let channels = json["channels"].array {
-            self.tablechannellistData = channels
-        }//歌曲数据
-        else if let song = json["song"].array{
-            self.tablesonglistData = song
-        }
-        //获取数据后更新tableview里的数据
-        self.playlist.reloadData()
-        
-    }
-
-
 
 }
 
